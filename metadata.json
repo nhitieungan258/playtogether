@@ -1,0 +1,5 @@
+{
+  "name": "Memory Grid Pro",
+  "description": "An interactive grid-based memory trainer where you can customize grid dimensions and practice recalling positions of various icon-based cards.",
+  "requestFramePermissions": []
+}
