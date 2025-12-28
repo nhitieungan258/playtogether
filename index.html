@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>MemGrid Studio - Luyện Trí Nhớ Thẻ Ảnh</title>
+  <title>MemGrid Studio - Hệ Thống Quản Lý Sơ Đồ Trí Nhớ</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -12,19 +12,19 @@
     
     :root {
       --primary: #6366f1;
-      --primary-hover: #4f46e5;
     }
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #f8fafc;
       overflow: hidden;
+      user-select: none;
     }
 
-    /* Custom Scrollbar */
+    /* Tối ưu thanh cuộn */
     ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
     }
     ::-webkit-scrollbar-track {
       background: transparent;
@@ -36,18 +36,33 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #94a3b8;
     }
+
+    /* Hiệu ứng chuyển cảnh mượt mà */
+    .fade-enter { opacity: 0; transform: scale(0.95); }
+    .fade-enter-active { opacity: 1; transform: scale(1); transition: all 300ms ease-out; }
+
+    /* Glassmorphism hiệu ứng */
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
   </style>
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
 </head>
 <body>
   <div id="root"></div>
+  <script type="module" src="index.tsx"></script>
 </body>
 </html>
